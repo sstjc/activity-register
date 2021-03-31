@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+  <!-- <link rel="stylesheet" type="text/css" href="style/reset.css" /> -->
+  <link rel="stylesheet" type="text/css" href="style/main.css" />
+
+<body>
+
+  <div id="like_button_container"></div>
+
+<div>
+  <form action="#">
+    <div class="container">
+      <h1>Roll Call</h1>
+      <!-- <p>請輸入報到資料</p> -->
+      <div>是否有信徒編號: <input type="checkbox" checked="checked" name="check_member"></div>
+      <hr>
+      </br>
+      <div>
+        <label for="member_id"><b>編號</b></label>
+        <input type="text" placeholder="請輸入" name="member_id" required>      
+      </div>
+      <div>
+        <label for="name"><b>姓名</b></label>
+        <input type="text" placeholder="請輸入" name="name" required>      
+      </div>
+      <div>
+        <label for="phone"><b>電話號碼</b></label>
+        <input type="text" placeholder="請輸入" name="phone" required>      
+      </div>
+      <div class="clearfix">
+        <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">報到</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">報到成功</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Jimmy 報到成功
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">關閉</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+
+<script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+<!-- <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script> -->
+
+<!-- <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> -->
+
+<!-- 載入我們的 React component。-->
+<script src="like_button.js"></script>
+</body>
+</html>
