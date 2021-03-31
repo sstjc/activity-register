@@ -3,7 +3,7 @@ class RollCallForm extends React.Component {
     render() {  
       return (
             <div>
-                <form action="#">``
+                <form action="#">
                     <div class="container">
                     <h1>Roll Call</h1>
                     <div>是否有信徒編號: <input type="checkbox" name="check_member" /></div>
