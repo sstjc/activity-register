@@ -8,6 +8,13 @@
 * npx babel --watch src --out-file test.js --presets react-app/pro
     * 可以編譯到單一檔案
 
+## TODO
+* 優畫到手機的顯示，讓圖示和字體變大
+* 讓報到跟彈出匡脫句，報到時會直接發出API，API回傳成功再彈出提示匡
+* 新增記住我功能
+
+
 ## ref
 * [react中文版](https://zh-hant.reactjs.org/)
 * [babel](https://babeljs.io/docs/en/babel-cli/)
+* [Remember me functionality in React JS](http://www.webstudypoint.com/remember-me-functionality-in-react-js/)
