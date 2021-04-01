@@ -67,3 +67,7 @@ button:hover {
      width: 100%;
   }
 }
+
+.input-item {
+  min-height: 46vh;
+}
