@@ -16,7 +16,7 @@ class RollCallForm extends React.Component {
         member_id: '',
         name: '',
         phone: '',
-
+        showMessage: false,
       };
     
     onClick = e => {
@@ -36,7 +36,7 @@ class RollCallForm extends React.Component {
     }
 
     componentDidMount() {
-        if (localStorage.checkbox && localStorage.email !== "") {
+        if (localStorage.checkbox) {
             this.setState({
                 remember_checked: true,
                 member_id: localStorage.member_id,
@@ -60,16 +60,29 @@ class RollCallForm extends React.Component {
  
     loginSubmit = () => {
         const { member_id, name, phone, remember_checked } = this.state
-        if (remember_checked && email !== "") {
+        if (remember_checked) {
             localStorage.member_id = member_id
             localStorage.name = name
             localStorage.name = phone
             localStorage.checkbox = remember_checked
         }
         // here call the API to signup/login
+        this.toggleMessage()
     }
+
+    toggleMessage = () => {
+        this.setState({showMessage:!this.state.showMessage});
+    }
+
+
     render() { 
       const { member_id_checked, remember_checked, member_id, name, phone, } = this.state
+      
+      let this_message = null;
+      if (this.state.showMessage) {
+        this_message = <Message toggleMessage={this.toggleMessage} />
+      }
+
       return (
             <div>
                 <form action="#">
@@ -88,10 +101,10 @@ class RollCallForm extends React.Component {
                     <div class="clearfix">
                         {/* <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">報到</button> */}
                         <button type="submit" class="btn btn-primary" onClick={this.loginSubmit}>報到</button>
-
                     </div>
                     </div>
                 </form>
+                {this_message}
             </div>
       );
     }
