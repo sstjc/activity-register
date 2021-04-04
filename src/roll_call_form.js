@@ -87,21 +87,23 @@ class RollCallForm extends React.Component {
             <div>
                 <form action="#">
                     <div class="container">
-                    <h1>松山教會防疫點名系統</h1>
-                    <div class='mb-3'>是否有信徒編號: 
-                         <input class='ml-1' type="checkbox" checked={this.state.member_id_checked} onClick={this.onClick.bind(this)} />
-                    </div>
-                    <div class="input-item">
-                        {this.input_item_by_checkbox()}
-                    </div>
-                    <div>                                
-                        <input type="checkbox" checked={remember_checked} name="lsRememberMe" onChange={this.onChangeCheckbox} />
-                        <label>Remember me</label>
-                    </div>
-                    <div class="clearfix">
-                        {/* <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">報到</button> */}
-                        <button type="submit" class="btn btn-primary" onClick={this.loginSubmit}>報到</button>
-                    </div>
+                        <div class="form-title">
+                            <h1>松山教會防疫點名系統</h1>
+                            <div class='mb-3'>是否有信徒編號: 
+                                <input class='ml-1' type="checkbox" checked={this.state.member_id_checked} onClick={this.onClick.bind(this)} />
+                            </div>
+                        </div>
+                        <div class="input-item">
+                            {this.input_item_by_checkbox()}
+                        </div>
+                        {/* <div>                                
+                            <input type="checkbox" checked={remember_checked} name="lsRememberMe" onChange={this.onChangeCheckbox} />
+                            <label>Remember me</label>
+                        </div> */}
+                        <div class="clearfix form-submit">
+                            {/* <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">報到</button> */}
+                            <button type="submit" class="btn btn-primary" onClick={this.loginSubmit}>報到</button>
+                        </div>
                     </div>
                 </form>
                 {this_message}

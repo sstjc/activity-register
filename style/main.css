@@ -68,6 +68,14 @@ button:hover {
   }
 }
 
+.form-title {
+  min-height: 20vh;
+}
 .input-item {
-  min-height: 46vh;
+  min-height: 55vh;
+}
+
+.form-submit button{
+  height: 15vh;
+  font-size: 3em;
 }
