@@ -26,7 +26,7 @@ class RollCallForm extends React.Component {
 
     input_item_by_checkbox = () => {
             if(this.state.member_id_checked){
-                return <Input_item name="member_id" label="編號"/>
+                return <Input_item name="member_id" label="信徒編號"/>
             }else{
                 return [
                 <Input_item name="name" label="姓名"/>, 
@@ -35,37 +35,37 @@ class RollCallForm extends React.Component {
         }
     }
 
-    componentDidMount() {
-        if (localStorage.checkbox) {
-            this.setState({
-                remember_checked: true,
-                member_id: localStorage.member_id,
-                name: localStorage.name,
-                phone: localStorage.phone,
-            })
-        }
-    }
+    // componentDidMount() {
+    //     if (localStorage.checkbox) {
+    //         this.setState({
+    //             remember_checked: true,
+    //             member_id: localStorage.member_id,
+    //             name: localStorage.name,
+    //             phone: localStorage.phone,
+    //         })
+    //     }
+    // }
  
-    onChangeValue = event => {
-        this.setState({
-            [event.target.name]: event.target.value
-        })
-    }
+    // onChangeValue = event => {
+    //     this.setState({
+    //         [event.target.name]: event.target.value
+    //     })
+    // }
  
-    onChangeCheckbox = event => {
-        this.setState({
-            remember_checked: event.target.checked
-        })
-    }
+    // onChangeCheckbox = event => {
+    //     this.setState({
+    //         remember_checked: event.target.checked
+    //     })
+    // }
  
     loginSubmit = () => {
-        const { member_id, name, phone, remember_checked } = this.state
-        if (remember_checked) {
-            localStorage.member_id = member_id
-            localStorage.name = name
-            localStorage.name = phone
-            localStorage.checkbox = remember_checked
-        }
+        // const { member_id, name, phone, remember_checked } = this.state
+        // if (remember_checked) {
+        //     localStorage.member_id = member_id
+        //     localStorage.name = name
+        //     localStorage.name = phone
+        //     localStorage.checkbox = remember_checked
+        // }
         // here call the API to signup/login
         this.toggleMessage()
     }
@@ -88,12 +88,13 @@ class RollCallForm extends React.Component {
                 <form action="#">
                     <div class="container">
                         <div class="form-title">
-                            <h1>松山教會防疫點名系統</h1>
-                            <div class='mb-3'>是否有信徒編號: 
-                                <input class='ml-1' type="checkbox" checked={this.state.member_id_checked} onClick={this.onClick.bind(this)} />
+                            <h1 class='text-center'>松山教會防疫點名系統</h1>
+                            <div class='check_id'>
+                                <input class='mr-1 big-checkbox' type="checkbox" checked={this.state.member_id_checked} onClick={this.onClick.bind(this)} />
+                                是否有信徒編號
                             </div>
                         </div>
-                        <div class="input-item">
+                        <div class="input-item pt-3">
                             {this.input_item_by_checkbox()}
                         </div>
                         {/* <div>                                

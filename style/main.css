@@ -71,11 +71,30 @@ button:hover {
 .form-title {
   min-height: 20vh;
 }
+
+.form-title .check_id{
+  font-size: 1.5em;
+}
+
+.form-title .big-checkbox{
+  width: 1.3rem;
+  height: 1.3rem;
+  top:0.5rem
+}
+
 .input-item {
   min-height: 55vh;
 }
 
+.input-item label {
+  font-size: 2em;
+}
+
+.form-submit {
+  height: 20vh;
+}
+
 .form-submit button{
-  height: 15vh;
-  font-size: 3em;
+  height: 18vh;
+  font-size: 3.3em;
 }
