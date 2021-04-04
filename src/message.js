@@ -11,11 +11,8 @@ class Message extends React.Component {
     }
 }
     render() {  
-      const style = {
-        display: 'block',
-      };
       return (
-        <div class="modal" style={style}>
+        <div class="modal">
           <div class="modal-dialog" role="document">
               <div class="modal-content">
               <div class="modal-header">

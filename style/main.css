@@ -68,6 +68,11 @@ button:hover {
   }
 }
 
+div.modal {
+  display: block;
+  top: 20vh;
+}
+
 .form-title {
   min-height: 20vh;
 }
@@ -83,7 +88,7 @@ button:hover {
 }
 
 .input-item {
-  min-height: 55vh;
+  min-height: 45vh;
 }
 
 .input-item label {
@@ -98,3 +103,5 @@ button:hover {
   height: 18vh;
   font-size: 3.3em;
 }
+
+

@@ -103,7 +103,7 @@ class RollCallForm extends React.Component {
                         </div> */}
                         <div class="clearfix form-submit">
                             {/* <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">報到</button> */}
-                            <button type="submit" class="btn btn-primary" onClick={this.loginSubmit}>報到</button>
+                            <button type="submit" class="btn btn-success" onClick={this.loginSubmit}>報到</button>
                         </div>
                     </div>
                 </form>
