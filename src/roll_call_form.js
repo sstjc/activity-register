@@ -67,7 +67,22 @@ class RollCallForm extends React.Component {
         //     localStorage.checkbox = remember_checked
         // }
         // here call the API to signup/login
-        this.toggleMessage()
+        let target_url = "https://dog.ceo/api/breeds/image/random"
+        fetch(target_url)
+        .then(res => res.json())
+        .then(
+            (result) => {
+                // 成功訊息
+                console.log(result)
+                console.log('success')
+                this.toggleMessage()
+            },
+            (error) => {
+                // 失敗訊息，給出舊表單頁面
+                this.toggleMessage()
+                console.log('fail')
+            }
+        )
     }
 
     toggleMessage = () => {
@@ -94,7 +109,7 @@ class RollCallForm extends React.Component {
                                 是否有信徒編號
                             </div>
                         </div>
-                        <div class="input-item pt-3">
+                        <div class="input-item">
                             {this.input_item_by_checkbox()}
                         </div>
                         {/* <div>                                
