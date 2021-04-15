@@ -67,22 +67,50 @@ class RollCallForm extends React.Component {
         //     localStorage.checkbox = remember_checked
         // }
         // here call the API to signup/login
-        let target_url = "https://dog.ceo/api/breeds/image/random"
-        fetch(target_url)
-        .then(res => res.json())
+        let target_url = "https://ngghkzcdl5.execute-api.us-east-1.amazonaws.com/dev/rollcall/"
+
+        $.ajax({
+            type: 'POST',
+            url: target_url,
+            data: {
+                'id': 1,
+            },
+            success: success,
+            dataType: dataType
+          }) 
+          .success(function() { alert("second success"); })
+          .error(function() { alert("error"); })
+          .complete(function() { alert("complete"); });
+          
+        // todo 改用jquery
+        fetch(target_url, {
+            body: JSON.stringify({
+                'id': 1,
+            }),
+            method: 'POST',
+            mode: 'no-cors',
+        })
+        .then((res) => {
+            return res.text()
+        })
         .then(
             (result) => {
                 // 成功訊息
                 console.log(result)
+                console.log(JSON.parse(result))
                 console.log('success')
                 this.toggleMessage()
             },
-            (error) => {
-                // 失敗訊息，給出舊表單頁面
-                this.toggleMessage()
-                console.log('fail')
-            }
+            // (error) => {
+            //     // 失敗訊息，給出舊表單頁面
+            //     this.toggleMessage()
+            //     console.log('fail', error)
+            // }
         )
+        .catch((error) => {
+            this.toggleMessage()
+            console.log('fail', error)
+        })
     }
 
     toggleMessage = () => {
