@@ -26,11 +26,11 @@ class RollCallForm extends React.Component {
 
     input_item_by_checkbox = () => {
             if(this.state.member_id_checked){
-                return <Input_item name="member_id" label="信徒編號"/>
+                return <Input_item name="member_id" label="信徒編號" ref="id"/>
             }else{
                 return [
-                <Input_item name="name" label="姓名"/>, 
-                <Input_item name="phone" label="電話號碼"/>
+                <Input_item name="name" label="姓名" ref="vistor_name"/>, 
+                <Input_item name="phone" label="電話號碼" ref="vistor_phone"/>
             ]
         }
     }
@@ -58,7 +58,7 @@ class RollCallForm extends React.Component {
     //     })
     // }
  
-    loginSubmit = (id) => {
+    loginSubmit = (e) => {
         // const { member_id, name, phone, remember_checked } = this.state
         // if (remember_checked) {
         //     localStorage.member_id = member_id
@@ -67,6 +67,7 @@ class RollCallForm extends React.Component {
         //     localStorage.checkbox = remember_checked
         // }
         // here call the API to signup/login
+        e.preventDefault();
         let target_url = "https://ngghkzcdl5.execute-api.us-east-1.amazonaws.com/dev/rollcall/"
 
         $.ajax({
@@ -74,7 +75,9 @@ class RollCallForm extends React.Component {
             crossDomain: true,
             url: target_url,
             data: {
-                'id': 1,
+                'id': this.refs.id.value,
+                'vistor_name': this.refs.vistor_name.value,
+                'vistor_phone': this.refs.vistor_phone.value,
             },
             // dataType: 'json',
             success: (data) => {
@@ -137,21 +140,18 @@ class RollCallForm extends React.Component {
                         <div class="form-title">
                             <h1 class='text-center'>松山教會防疫點名系統</h1>
                             <div class='check_id'>
-                                <input class='mr-1 big-checkbox' type="checkbox" checked={this.state.member_id_checked} onClick={this.onClick.bind(this)} />
-                                是否有信徒編號
+                                    <input class='mr-1 big-checkbox' type="checkbox" checked={this.state.member_id_checked} onClick={this.onClick.bind(this)} />
+                                    是否有信徒編號
                             </div>
                         </div>
-                        <div class="input-item">
-                            {this.input_item_by_checkbox()}
-                        </div>
-                        {/* <div>                                
-                            <input type="checkbox" checked={remember_checked} name="lsRememberMe" onChange={this.onChangeCheckbox} />
-                            <label>Remember me</label>
-                        </div> */}
-                        <div class="clearfix form-submit">
-                            {/* <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">報到</button> */}
-                            <button type="submit" class="btn btn-success" onClick={this.loginSubmit}>報到</button>
-                        </div>
+                        <form onSubmit = {this.fetchWeather}>
+                            <div class="input-item">
+                                {this.input_item_by_checkbox()}
+                            </div>
+                            <div class="clearfix form-submit">
+                                <button type="submit" class="btn btn-success" onSubmit={this.loginSubmit}>報到</button>
+                            </div>
+                        </form>
                     </div>
                 </form>
                 {this_message}

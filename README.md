@@ -19,3 +19,4 @@
 * [react中文版](https://zh-hant.reactjs.org/)
 * [babel](https://babeljs.io/docs/en/babel-cli/)
 * [Remember me functionality in React JS](http://www.webstudypoint.com/remember-me-functionality-in-react-js/)
+* [Pass form input value to method in react](https://stackoverflow.com/questions/57166925/pass-form-input-value-to-method-in-react)
