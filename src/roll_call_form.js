@@ -71,46 +71,52 @@ class RollCallForm extends React.Component {
 
         $.ajax({
             type: 'POST',
+            crossDomain: true,
             url: target_url,
             data: {
                 'id': 1,
             },
-            success: success,
-            dataType: dataType
+            // dataType: 'json',
+            success: (data) => {
+                alert('second success', data);
+            },
+            error: (error) => {
+                alert("error", error);
+            },
+            complete:  () => {
+                alert("complete");
+            },
           }) 
-          .success(function() { alert("second success"); })
-          .error(function() { alert("error"); })
-          .complete(function() { alert("complete"); });
           
         // todo 改用jquery
-        fetch(target_url, {
-            body: JSON.stringify({
-                'id': 1,
-            }),
-            method: 'POST',
-            mode: 'no-cors',
-        })
-        .then((res) => {
-            return res.text()
-        })
-        .then(
-            (result) => {
-                // 成功訊息
-                console.log(result)
-                console.log(JSON.parse(result))
-                console.log('success')
-                this.toggleMessage()
-            },
-            // (error) => {
-            //     // 失敗訊息，給出舊表單頁面
-            //     this.toggleMessage()
-            //     console.log('fail', error)
-            // }
-        )
-        .catch((error) => {
-            this.toggleMessage()
-            console.log('fail', error)
-        })
+    //     fetch(target_url, {
+    //         body: JSON.stringify({
+    //             'id': 1,
+    //         }),
+    //         method: 'POST',
+    //         mode: 'no-cors',
+    //     })
+    //     .then((res) => {
+    //         return res.text()
+    //     })
+    //     .then(
+    //         (result) => {
+    //             // 成功訊息
+    //             console.log(result)
+    //             console.log(JSON.parse(result))
+    //             console.log('success')
+    //             this.toggleMessage()
+    //         },
+    //         (error) => {
+    //             // 失敗訊息，給出舊表單頁面
+    //             this.toggleMessage()
+    //             console.log('fail', error)
+    //         }
+    //     )
+    //     .catch((error) => {
+    //         this.toggleMessage()
+    //         console.log('fail', error)
+    //     })
     }
 
     toggleMessage = () => {
