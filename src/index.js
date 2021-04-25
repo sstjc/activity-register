@@ -1,15 +1,8 @@
-// import {Message} from 'message.js';
-// import {RollCallForm} from 'roll_call_form.js';
-
-class App extends React.Component {
-  render() {
-    return (
-        <div>
-            <RollCallForm />
-        </div>
-    );
+let myFunction = () => {
+    var x = document.getElementById("myDIV");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
   }
-}
-
-
-ReactDOM.render(<App />, document.getElementById('root'));
