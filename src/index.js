@@ -1,12 +1,9 @@
 $(() => {
-  let myFunction = () => {
-    var x = document.getElementById("myDIV");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  }
+  $("input[type='checkbox']").click(() => {
+    $.each($("form#rollcallForm div.input-list div"), (index, value) => {
+      value.classList.toggle("hidden_form");
+    })
+  })
 
   // 登入腳本
   $('#rollcallForm').submit((e) => {
@@ -25,14 +22,13 @@ $(() => {
         },
         success: (res_data) => {
           alert(res_data)
-          // alert('success')
         },
         error: (res_data) => {
-          alert('error')
+          alert('未知錯誤，報到失敗')
         },
-        complete: (res_data) => {
-          alert('complete')
-      },
+        // complete: (res_data) => {
+        //   alert('complete')
+        // },
     });
   });
 

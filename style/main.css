@@ -71,9 +71,6 @@ div.modal {
   min-height: 20vh;
 }
 
-.form-title .check_id{
-  font-size: 1.5em;
-}
 
 .form-title .big-checkbox{
   width: 1.3rem;
@@ -86,18 +83,26 @@ div.modal {
 }
 
 .input-item label {
-  font-size: 2em;
+  font-size: 2rem;
 }
 
 
 label {
-  font-size: 2em;
+  font-size: 1.5rem;
 }
 
 form #submit{
   height: 18vh;
-  font-size: 3.3em;
+  font-size: 3.3rem;
   width: 100%;
 }
 
+
+.hidden_form {
+  display: none;
+}
+
+.input-list {
+  min-height: 50vh;
+}
 

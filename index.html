@@ -16,25 +16,28 @@
 <body>
   <div class="container">
       <div class="form-title">
-          <h1 class='text-center'>松山教會防疫點名系統</h1>
-          <div class='check_id'>
-            <input class='mr-1 big-checkbox' type="checkbox" checked={this.state.member_id_checked} />
+          <h2 class='text-center'>松山教會防疫點名系統</h2>
+          <label class="container">
+            <input class='mr-1 big-checkbox' type="checkbox" checked="checked">
+            <span class="checkmark"></span>
             是否有信徒編號
-          </div>
+          </label>
       </div>
       <form id='rollcallForm'>
-            <div id='member_id'>
-              <label><b>信徒編號</b></label>
-              <input type="text" placeholder="請輸入">
+            <div class="input-list">
+              <div id='member_id'>
+                <label><b>信徒編號</b></label>
+                <input type="text" placeholder="請輸入">
+              </div>
+              <div id='name' class="hidden_form">
+                <label><b>姓名</b></label>
+                <input type="text" placeholder="請輸入">
+              </div>
+              <div id='phone' class="hidden_form">
+                <label><b>電話</b></label>
+                <input type="text" placeholder="請輸入">
+              </div>
             </div>
-            <!-- <div id='name'>
-              <label><b>姓名</b></label>
-              <input type="text" placeholder="請輸入">
-            </div>
-            <div id='phone'>
-              <label><b>電話</b></label>
-              <input type="text" placeholder="請輸入">
-            </div> -->
             <input id="submit" type="submit" class="btn btn-success" value="報到"/>
       </form>
   </div>
