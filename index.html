@@ -7,7 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" type="text/css" href="style/reset.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
   <link rel="stylesheet" type="text/css" href="style/main.css" />
 
@@ -15,36 +16,48 @@
 
 <body>
   <div class="container">
-      <div class="form-title">
-          <h2 class='text-center'>松山教會防疫點名系統</h2>
-          <label class="container">
-            <input class='mr-1 big-checkbox' type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-            是否有信徒編號
-          </label>
-      </div>
-      <form id='rollcallForm'>
-            <div class="input-list">
-              <div id='member_id'>
+    <div class="form-title">
+      <h2 class='text-center'>松山教會防疫聚會登記系統</h2>
+      <!-- <label class="container">
+        <input class='mr-1 big-checkbox' type="checkbox" checked="checked">
+        <span class="checkmark"></span>
+        是否有信徒編號
+      </label> -->
+    </div>
+    <form id='rollcallForm'>
+      <div class="input-list">
+        <label><b>欲登記聚會場次</b></label>
+        <div id='meeting'>
+          <div class="meeting_row"></div>
+        </div>
+        <!-- <div id='member_id'>
                 <label><b>信徒編號</b></label>
                 <input type="text" placeholder="請輸入" required>
               </div>
               <div id='name' class="hidden_form">
                 <label><b>姓名</b></label>
                 <input type="text" placeholder="請輸入">
-              </div>
-              <div id='phone' class="hidden_form">
-                <label><b>電話</b></label>
-                <input type="text" placeholder="請輸入">
-              </div>
-            </div>
-            <input id="submit" type="submit" class="btn btn-success" value="報到"/>
-      </form>
+              </div> -->
+        <div id='name'>
+          <label><b>姓名</b></label>
+          <input type="text" placeholder="請輸入">
+        </div>
+        <div id='phone'>
+          <label><b>電話</b></label>
+          <input type="text" placeholder="請輸入">
+        </div>
+      </div>
+
+      <input id="submit" type="submit" class="btn btn-success" value="登記" />
+    </form>
   </div>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-<script src="src/index.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+    crossorigin="anonymous"></script>
+  <script src="src/index.js"></script>
 
 </body>
 
