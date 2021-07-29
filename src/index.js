@@ -57,9 +57,9 @@ $(() => {
       <div class="form-check">
       <input class="form-check-input" type="radio" name="meetingRadios" value="${data.id}" ${disabled_status} ${required_status}>
       <label class="form-check-label">
-      ${data.meeting_time}，${limit_message}
+      ${data.display_meeting_time}，${limit_message}，
       </label>
-      <input class="btn btn-info" value="報名名單" />
+      <a class="btn btn-info" href="/rollcall_list.html?id=${data.id}">已登記聚會名單</a>
     </div> 
   `
   }
