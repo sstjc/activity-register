@@ -1,10 +1,10 @@
 $(() => {
   let base_domain = 'http://127.0.0.1:8000/api/v1'
-  let clean_data = () => {
-    $("#member_id input").val('')
-    $("#name input").val('')
-    $("#phone input").val('')
-  }
+  // let clean_data = () => {
+  //   $("#member_id input").val('')
+  //   $("#name input").val('')
+  //   $("#phone input").val('')
+  // }
 
   let get_meeting_data = () => {
     $.ajax({
@@ -15,7 +15,7 @@ $(() => {
         render_meeting_radio(res_data.meeting_data)
       },
       error: (res_data) => {
-        alert('未知錯誤，報到失敗')
+        console.log('unknown error')
       },
     });
   }
@@ -23,7 +23,6 @@ $(() => {
 
   let render_meeting_radio = (datas) => {
     let meeting_row = document.querySelector('.meeting_row')
-
     if(datas.length > 0){
       if(datas.find((item) => item.is_full === false)){
         let enroll = document.querySelector('.enroll')
@@ -126,9 +125,14 @@ $(() => {
       },
       success: (res_data) => {
         console.log(res_data)
-        alert(`${res_data.name}於${res_data.rollcall_time}登記${res_data.meeting_time}的聚會成功`)
+        if(res_data.isfull){
+          alert(`登記失敗，此時段的聚會已額滿`)
+        }else{
+          alert(`成功，${res_data.name}已登記${res_data.meeting_time}聚會`)
+        }
+        location.reload();
         
-        clean_data()
+        // clean_data()
         // TODO 如果名額不夠就要取消輸入頁面
         // 更新剩餘名額
       },
