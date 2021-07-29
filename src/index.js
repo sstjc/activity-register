@@ -1,4 +1,5 @@
 $(() => {
+  let base_domain = 'http://127.0.0.1:8000/api/v1'
   let clean_data = () => {
     $("#member_id input").val('')
     $("#name input").val('')
@@ -8,7 +9,7 @@ $(() => {
   let get_meeting_data = () => {
     $.ajax({
       type: "GET",
-      url: "http://127.0.0.1:8000/api/v1/meetings/",
+      url: `${base_domain}/meetings/`,
       success: (res_data) => {
         console.log(res_data)
         render_meeting_radio(res_data.meeting_data)
@@ -110,18 +111,26 @@ $(() => {
     let member_id = $("#member_id input").val();
     let name = $("#name input").val();
     let phone = $("#phone input").val();
+    let meeting_id =$('input[name=meetingRadios]:checked', '#rollcallForm').val()
+    
     $.ajax({
       type: "POST",
-      url: "http://localhost:5000/rollcall",
-      // url: "https://ngghkzcdl5.execute-api.us-east-1.amazonaws.com/dev/rollcall/",
+      url: `${base_domain}/rollcall/`,
       data: {
-        id: member_id,
-        vistor_name: name,
-        vistor_phone: phone,
+        member_id: member_id,
+        name: name,
+        phone: phone,
+        meet: meeting_id,
+        meeting: meeting_id,
+        meeting_id: meeting_id,
       },
       success: (res_data) => {
-        alert(res_data)
+        console.log(res_data)
+        alert(`${res_data.name}於${res_data.rollcall_time}登記${res_data.meeting_time}的聚會成功`)
+        
         clean_data()
+        // TODO 如果名額不夠就要取消輸入頁面
+        // 更新剩餘名額
       },
       error: (res_data) => {
         alert('未知錯誤，報到失敗')
