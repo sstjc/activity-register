@@ -1,10 +1,5 @@
 $(() => {
   let base_domain = 'http://127.0.0.1:8000/api/v1'
-  // let clean_data = () => {
-  //   $("#member_id input").val('')
-  //   $("#name input").val('')
-  //   $("#phone input").val('')
-  // }
 
   let get_meeting_data = () => {
     $.ajax({
@@ -45,10 +40,12 @@ $(() => {
   let meeting_html = (data) => {
     let disabled_status = ''
     let limit_message = ''
+    let required_status = ''
     if(data.limit_number){
       let remaining_number = data.limit_number - data.rollcall_number
       if(remaining_number > 0){
         limit_message = `剩餘名額 ${remaining_number} 位`
+        required_status = 'required="required"'
       }else{
         limit_message = `額滿，無法登記`
         disabled_status = 'disabled'
@@ -58,7 +55,7 @@ $(() => {
     }
     return `
       <div class="form-check">
-      <input class="form-check-input" type="radio" name="meetingRadios" value="${data.id}" ${disabled_status}>
+      <input class="form-check-input" type="radio" name="meetingRadios" value="${data.id}" ${disabled_status} ${required_status}>
       <label class="form-check-label">
       ${data.meeting_time}，${limit_message}
       </label>
@@ -76,11 +73,11 @@ $(() => {
     return `
     <div id='name'>
           <label><b>姓名</b></label>
-          <input type="text" placeholder="請輸入">
+          <input type="text" placeholder="請輸入" required="required">
         </div>
         <div id='phone'>
           <label><b>電話</b></label>
-          <input type="text" placeholder="請輸入">
+          <input type="text" placeholder="請輸入" required="required">
     </div>
     `
   }
@@ -128,13 +125,10 @@ $(() => {
         if(res_data.isfull){
           alert(`登記失敗，此時段的聚會已額滿`)
         }else{
-          alert(`成功，${res_data.name}已登記${res_data.meeting_time}聚會`)
+          alert(`成功，${res_data.name} 已登記 ${res_data.meeting_time} 的聚會`)
         }
         location.reload();
-        
-        // clean_data()
-        // TODO 如果名額不夠就要取消輸入頁面
-        // 更新剩餘名額
+
       },
       error: (res_data) => {
         alert('未知錯誤，報到失敗')
