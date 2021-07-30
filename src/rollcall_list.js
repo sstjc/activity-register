@@ -1,5 +1,5 @@
 $(() => {
-    let base_domain = 'http://127.0.0.1:8000/api/v1'
+    // 取得原始網址參數
     let url_string = window.location.href
     let url = new URL(url_string);
     let id = url.searchParams.get("id");

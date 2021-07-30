@@ -1,6 +1,4 @@
 $(() => {
-  let base_domain = 'http://127.0.0.1:8000/api/v1'
-
   let get_meeting_data = () => {
     $.ajax({
       type: "GET",
