@@ -1,13 +1,5 @@
-# 活動登記
-* serverless + google sheet api
-
-## 命令
-* npx babel --watch src --out-dir lib --presets react-app/prod,minify
-    * 匯出檔案到lib資料夾，並且壓縮
-* npx babel --watch src --out-dir . --presets react-app/prod
-    * 匯出檔案到本地
-* npx babel --watch src --out-file test.js --presets react-app/pro
-    * 可以編譯到單一檔案
+# 松山防疫聚會登記系統
+* api client
 
 ## TODO
 * 部屬github
@@ -19,12 +11,9 @@
     * 選做
 
 ## done
+* 部屬github
 * 完成聚會場次顯示邏輯
 * 報名完畢更新網頁狀態，檢查人數，需要重新整理
 * 報名如果人數已滿要顯示
 * 發送登記資料
 * 顯示報名完成名單
-
-
-## ref
-* [babel](https://babeljs.io/docs/en/babel-cli/)
