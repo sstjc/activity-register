@@ -12,7 +12,7 @@ $(() => {
                 render_rollcall_table(res_data)
             },
             error: (res_data) => {
-                console.log('unknown error')
+                // console.log('unknown error')
             },
         });
     }

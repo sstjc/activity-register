@@ -4,11 +4,11 @@ $(() => {
       type: "GET",
       url: `${base_domain}/meetings/`,
       success: (res_data) => {
-        console.log(res_data)
+        // console.log(res_data)
         render_meeting_radio(res_data.meeting_data)
       },
       error: (res_data) => {
-        console.log('unknown error')
+        // console.log('unknown error')
       },
     });
   }
@@ -119,7 +119,7 @@ $(() => {
         meeting_id: meeting_id,
       },
       success: (res_data) => {
-        console.log(res_data)
+        // console.log(res_data)
         if(res_data.isfull){
           alert(`登記失敗，此時段的聚會已額滿`)
         }else{
