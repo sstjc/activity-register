@@ -58,7 +58,7 @@ $(() => {
       <label class="form-check-label">
       ${data.display_meeting_time}，${limit_message}，
       </label>
-      <a class="btn btn-info" href="/rollcall_list.html?id=${data.id}">查看登記名單</a>
+      <a class="btn btn-info" href="${client_domain}/rollcall_list.html?id=${data.id}">查看登記名單</a>
     </div> 
   `
   }
