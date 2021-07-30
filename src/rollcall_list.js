@@ -7,7 +7,8 @@ $(() => {
     let get_meeting_data = (this_meeting_id) => {
         $.ajax({
             type: "GET",
-            url: `${base_domain}/rollcall/?meeting_id=${this_meeting_id}`,
+            // url: `${base_domain}/rollcall/?meeting_id=${this_meeting_id}`,
+            url: `${rollcall_domain}?meeting_id=${this_meeting_id}`,
             success: (res_data) => {
                 render_rollcall_table(res_data)
             },

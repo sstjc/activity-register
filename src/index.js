@@ -2,7 +2,8 @@ $(() => {
   let get_meeting_data = () => {
     $.ajax({
       type: "GET",
-      url: `${base_domain}/meetings/`,
+      // url: `${base_domain}/meetings/`,
+      url: `${meeting_domain}`,
       success: (res_data) => {
         // console.log(res_data)
         render_meeting_radio(res_data.meeting_data)
@@ -109,7 +110,8 @@ $(() => {
     
     $.ajax({
       type: "POST",
-      url: `${base_domain}/rollcall/`,
+      // url: `${base_domain}/rollcall/`,
+      url: `${rollcall_domain}`,
       data: {
         member_id: member_id,
         name: name,

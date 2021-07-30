@@ -1,6 +1,10 @@
 # 松山防疫聚會登記系統
 * api client
 
+## AWS GATEWAY
+* https://m55z61z8b1.execute-api.us-west-1.amazonaws.com/jimmy_test_m
+* https://wagg4sygzj.execute-api.us-west-1.amazonaws.com/jimmy_test_r
+
 ## TODO
 * 部屬github
 * 加入松山id功能
