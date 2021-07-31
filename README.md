@@ -6,13 +6,8 @@
 * https://wagg4sygzj.execute-api.us-west-1.amazonaws.com/jimmy_test_r
 
 ## TODO
-* 部屬github
 * 加入松山id功能
-    * 目前選做
-* 優畫到手機的顯示，讓圖示和字體變大
-* 讓報到跟彈出匡脫句，報到時會直接發出API，API回傳成功再彈出提示匡
-* 新增記住我功能
-    * 選做
+* 加入 Vue3
 
 ## done
 * 部屬github
