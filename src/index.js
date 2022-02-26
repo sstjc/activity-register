@@ -2,6 +2,7 @@ $(() => {
   let get_meeting_data = () => {
     $.ajax({
       type: "GET",
+      // TODO 要依據環境修正
       // url: `${base_domain}/meetings/`,
       url: `${meeting_domain}`,
       success: (res_data) => {
